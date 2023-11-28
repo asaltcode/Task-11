@@ -1,0 +1,66 @@
+.container{
+    /* background-color: rgb(35,64,75); */
+    color: white;
+    background-color: rgb(35,64,75) !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.card{
+    /* background-color: rgb(213, 218, 254) !important; */
+    border-radius: 10px !important;
+    background-image: linear-gradient(to right ,rgb(221,202,163),  rgb(67,85,84));
+    margin-bottom: 10px !important;
+}
+.card-header{
+    border-radius: 10px 10px 0 0 !important;
+    background-color: black !important;
+}
+.card .img-box{
+    display: flex;
+    justify-content: center;
+    height: 8em;
+    margin:  30px auto 0 auto !important;
+    /* background-color: red ; */
+    object-fit: scale-down;
+}
+.img-box  img{
+    border-radius: 10px !important;
+    width: 90%;
+    align-self: center;
+    height: 100%;
+}
+.card-body{
+    padding-bottom: 40px !important;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    align-items: center;
+}
+.col-sm-6{
+    margin-top:  1em !important;
+}
+.weathar{
+    /* display: none; */
+    z-index: 100;
+    background-color: rgba(173, 173, 173, 0.521);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+/* rgb(219,201,163) */
+/* rgb(67,85,84) */
+
+/* <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
+<div class="card h-100">
+    <div class="card-header">
+        <h5 class=" card-title text-center">India</h5>
+    </div>
+    <img src="https://mainfacts.com/media/images/coats_of_arms/cx.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text text-center">Capital: </p>
+        <p class="card-text text-center">Region: </p>
+        <p class="card-text text-center">Country Code: </p>
+    </div>
+</div>
+</div> */
