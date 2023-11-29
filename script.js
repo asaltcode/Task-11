@@ -42,14 +42,14 @@ response
         let latlng = find[index].latlng;
         let lat = latlng[0];
         let lng = latlng[1];
-        let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=c2992e8e9788c5d112051a7a743a1b70`;
+        let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=c2992e8e9788c5d112051a7a743a1b70&units=metric`;
         let weatherObj = fetch(weatherAPI);
         weatherObj
           .then((data) => data.json())
           .then((val) =>
             alert(
               `Weather of ${find[index].name.common} =  ${Math.floor(
-                (val.main.temp - 32) * 5/9
+                val.main.temp
               )}° C `
             )
           );
