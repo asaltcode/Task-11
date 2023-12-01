@@ -8,7 +8,7 @@ function element(tag, classname, id, text) {
 }
 
 let containter = element("div", "container", "", "");
-const h1 = element("h1", "text-center", "title", "This is a head");
+const h1 = element("h1", "text-center", "title", "Countries weather checker");
 const row = element("div", "row", "", "");
 
 const response = fetch("https://restcountries.com/v3.1/all"); //this is rest country api
