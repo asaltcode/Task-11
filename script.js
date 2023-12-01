@@ -1,3 +1,4 @@
+//The function creates the element
 function element(tag, classname, id, text) {
   let tags = document.createElement(tag);
   tags.classList = classname;
@@ -10,16 +11,18 @@ let containter = element("div", "container", "", "");
 const h1 = element("h1", "text-center", "title", "This is a head");
 const row = element("div", "row", "", "");
 
-let countryAPI = "https://restcountries.com/v3.1/all";
-let response = fetch(countryAPI);
+const response = fetch("https://restcountries.com/v3.1/all"); //this is rest country api
 response
   .then((data) => data.json())
   .then((find) => {
     for (let i = 0; i < find.length; i++) {
-      row.innerHTML += `<div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
+      //allocating country ditails
+      const col = document.createElement("div");
+      col.classList = "col-sm-6 col-md-4 col-lg-4 col-xl-4";
+      col.innerHTML = `
     <div class="card h-100">
         <div class="card-header">
-            <h5 class="card-title text-center">${find[i].name.common}</h5>
+            <h5 class="card-title text-center">${find[i].name.common}</h5> 
         </div>
         <div class="img-box">
             <img src="${find[i].flags.png}" class="card-img-top" alt="..." />
@@ -30,15 +33,14 @@ response
             <div class="card-text text-center">Country Code: ${find[i].cca3}</div>
             <button class="btn btn-primary">Click for Weather</button>
         </div>
-    </div>
-</div>`;
+    </div>`;
+      row.append(col);
     }
-    let btns = document.querySelectorAll("button");
+    let btns = document.querySelectorAll("button"); //Selects the button
 
     btns.forEach((btn, index) => {
       let parent = btn.parentNode.parentNode.children[0].innerText;
       btn.addEventListener("click", () => {
-        // alert(btn.parentNode.parentNode.children[0].innerText);
         let latlng = find[index].latlng;
         let lat = latlng[0];
         let lng = latlng[1];
