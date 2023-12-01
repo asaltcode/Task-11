@@ -37,16 +37,14 @@ response
       row.append(col);
     }
     let btns = document.querySelectorAll("button"); //Selects the button
-
     btns.forEach((btn, index) => {
-      let parent = btn.parentNode.parentNode.children[0].innerText;
       btn.addEventListener("click", () => {
         let latlng = find[index].latlng;
         let lat = latlng[0];
         let lng = latlng[1];
-        let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=c2992e8e9788c5d112051a7a743a1b70&units=metric`;
-        let weatherObj = fetch(weatherAPI);
-        weatherObj
+        //Weather geting
+        let weatherAPI = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=c2992e8e9788c5d112051a7a743a1b70&units=metric`);
+        weatherAPI   
           .then((data) => data.json())
           .then((val) =>
             alert(
